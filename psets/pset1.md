@@ -44,6 +44,7 @@ state
         a Password
         a confirmed Flag
         a secret Token
+
 actions
     register (username: String, password: String, email: String): (token: String)
         requires User with that username does not exist
@@ -62,13 +63,17 @@ actions
 
 ```
 concept PersonalAccessToken[User]
+
 purpose authenticate users to GitHub via revokeable tokens as an alternative to using passwords
+
 principle user names a new token, gives it an expiration date and sets the token's scopes to define what resources the token has access to; then the user generates the token and copies it to be used; the token can later be deleted from the list of the user's personal access tokens
+
 state
-a set of Tokens with
-    a string Name
-    an expiration Date
-    a set of Scopes
+    a set of Tokens with
+        a string Name
+        an expiration Date
+        a set of Scopes
+
 actions
     createToken(user: User, name: String, expiration: Date, scope: [String]): (token: Token)
         requires user exists and token with same name does not exist
@@ -111,27 +116,6 @@ actions
 ```
 
 ### Billable Hours Tracking
-
-```
-concept BillableHoursTracker[Client, Employee, Project]
-
-purpose tracks hours worked by employees on projects
-
-principle user provides a long URL for a shortened URL that will redirect to the long URL and optionally provides the shortened URL suffix; URL shortener provides shortened URL (and supplies suffix if user did not provide)
-
-state
-    a set of ShortenedURLs with
-        a string LongURL
-
-actions
-    shortenURL(longURL: String, suffix: String): (shortenedURL: String)
-        requires a valid, nonempty URL
-        effects if suffix is nonempty, generates and returns a shortened URL with this suffix if the resulting shortened URL does not already exist, otherwise generates its own suffix for a shortened URL (that does not already exist) and returns it; adds shortenedURL
-
-    redirectURL(shortenedURL: String): (longURL: String)
-        requires shortenedURL exists and has associated LongURL
-        effects returns longURL associated with shortenedURL and redirects shortenedURL to this longURL
-```
 
 ```
 concept BillableHoursTracker[Employee, Project]
