@@ -18,3 +18,4 @@ Some fun facts about me:
 
 1. [Link to Assignment 1](assignments/assignment1.md)
 2. [Link to Pset 1](psets/pset1.md)
+3. [Link to Pset 2](psets/pset2.md)
