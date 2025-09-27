@@ -164,7 +164,7 @@ concept ArcTracking
             effect sets user’s progress for the day to true
 
         markNoProgress (user: User, arc: Arc): (progress: Progress Map<User, Boolean>)
-            requires user
+            requires user ∈ arc.Members
             effect sets user's progress for the day to false
 
         getArcStatus (arc: Arc): (status: Map<User, Boolean>)
@@ -234,11 +234,11 @@ sync incompleteArcToStats
     then updateStatWithIncompletedTask(user: user, stat: arc.associatedStat, delta: 1)
 
 sync arcProgressToReward
-  when ArcTracking.getArcStatus (arc): (status)
-  then if all status[user] = true for user in arc.Members
-       for each user in arc.Members
-         Rewarding.earnPoints (user: user, points: 1)
-         Rewarding.earnPoints (user: user, points: arc.streak)
+    when ArcTracking.getArcStatus (arc): (status)
+    then if all status[user] = true for user in arc.Members
+        for each user in arc.Members
+            Rewarding.earnPoints (user: user, points: 1)
+            Rewarding.earnPoints (user: user, points: arc.streak)
 ```
 
 **Notes**
