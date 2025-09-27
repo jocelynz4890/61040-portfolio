@@ -1,6 +1,9 @@
-# Template Portfolio
+# Table of Contents
 
-This will be your portfolio repository. Use this as a [template repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository) and customize it to your own tastes. We gave you a starting point with a space to describe yourself and a link to where your assignment 1 file can be.
+1. [Link to Assignment 1](assignments/assignment1.md)
+2. [Link to Pset 1](psets/pset1.md)
+3. [Link to Pset 2](psets/pset2.md)
+4. [Link to Assignment 2](assignments/assignment2.md)
 
 # About Me
 
@@ -13,9 +16,3 @@ Some fun facts about me:
 3. I enjoy hiking.
 
 ![Hiking trip with friends this past summer!](assets/rainier.JPG)
-
-# Table of Contents
-
-1. [Link to Assignment 1](assignments/assignment1.md)
-2. [Link to Pset 1](psets/pset1.md)
-3. [Link to Pset 2](psets/pset2.md)
