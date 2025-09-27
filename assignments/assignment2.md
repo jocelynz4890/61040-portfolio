@@ -59,10 +59,6 @@ By combining visual progress tracking, social accountability, and gamified rewar
 
 ## Concept Design
 
-trackering/group: set of tracker with set of users, string name, total streak, longest streak
-user: username, friend code
-stats: eating, sleeping, fitness, intelligence -> look at stats and give advice, encouraging quotes, maintaining balance
-rewards: avatar points, avatar
 **Concepts**
 
 ```
